@@ -19,6 +19,9 @@ function Game() {
 
   const handleClick = (id) => {
     console.log(id);
+    if(!markers[id]){
+
+    
     if (currentPlayer) {
       console.log("player 1:");
       setCurrentPlayer(false);
@@ -34,6 +37,7 @@ function Game() {
       setTurns(turns + 1);
       markers[id] = "O"
     }
+  }
   };
 
   function handleTurns(id) {
