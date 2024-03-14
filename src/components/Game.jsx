@@ -48,10 +48,21 @@ function Game() {
 
     const checkWinner = (player1, player2) => {
         for (let i = 0; i < winnerArrays.length; i++) {
-            if (player1.includes(winnerArrays[i])) {
-                console.log("Player 1 wins");
-            } else if (player2.includes(winnerArrays[i])) {
-                console.log("Player 2 wins");
+            const [a, b, c] = winnerArrays[i];
+            if (
+                player1.includes(a) &&
+                player1.includes(b) &&
+                player1.includes(c)
+            ) {
+                alert("Player 1 wins");
+                return;
+            } else if (
+                player2.includes(a) &&
+                player2.includes(b) &&
+                player2.includes(c)
+            ) {
+                alert("Player 2 wins");
+                return;
             }
         }
     };
