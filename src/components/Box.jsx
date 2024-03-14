@@ -1,8 +1,10 @@
+import "./Game.css";
 
-
-function Box (){
+function Box ({id}){
 
     return(
-        <div className="box"></div>
+        <div className="box">S</div>
     )
 }
+
+export default Box;
