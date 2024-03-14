@@ -1,9 +1,15 @@
 import "./Game.css";
 import { useState } from "react";
 
-function Box({ id, onClick, currentPlayer, marker }) {
+function Box({ id, handleClick, currentPlayer, marker }) {
     return (
-        <div className="box" id={id} onClick={() => onClick(id)}>
+        <div
+            className="box"
+            id={id}
+            onClick={() => {
+                console.log(id), handleClick(id);
+            }}
+        >
             {marker}
         </div>
     );
