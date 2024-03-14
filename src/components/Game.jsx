@@ -35,6 +35,7 @@ function Game() {
                 setTurns(turns + 1);
                 markers[id] = "X";
                 setMarkers;
+                
             } else {
                 setCurrentPlayer(true);
                 player2.push(id);
