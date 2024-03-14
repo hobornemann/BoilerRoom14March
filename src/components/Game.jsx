@@ -25,7 +25,7 @@ function Game() {
   const [player1, setPlayer1] = useState([]);
   const [player2, setPlayer2] = useState([]);
   const [markers, setMarkers] = useState(markerArray);
-  const [winner, setWinner] = useState("");
+  const [feedback, setFeedback] = useState("Next player: X");
 
   const handleClick = (id) => {
     if (!markers[id]) {
@@ -51,15 +51,19 @@ function Game() {
     for (let i = 0; i < winnerArrays.length; i++) {
       const [a, b, c] = winnerArrays[i];
       if (player1.includes(a) && player1.includes(b) && player1.includes(c)) {
-        setWinner("Player 1 wins");
+        setFeedback("Player 1 wins");
         return;
       } else if (
         player2.includes(a) &&
         player2.includes(b) &&
         player2.includes(c)
-      ) {
-        setWinner("Player 2 wins");
+      ){
+        setFeedback("Player 2 wins");
         return;
+      }else {
+        if(currentPlayer) {
+          setFeedback('Next player: O') 
+        }else{ setFeedback('Next player: X');} 
       }
     }
   };
@@ -75,7 +79,6 @@ function Game() {
 
   return (
     <>
-      <h2>{winner}</h2>
       <p>Turns: {turns}</p>
       <div className="box-list">
         {boxes &&
@@ -91,6 +94,7 @@ function Game() {
             );
           })}
       </div>
+      <h2>{feedback}</h2>
       <button onClick={resetGame}>Reset game</button>
     </>
   );
