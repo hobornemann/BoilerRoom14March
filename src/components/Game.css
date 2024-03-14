@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 .box {
+  background: white;
     color: rgb(0, 0, 0);
     width: 80px;
     height: 80px;
