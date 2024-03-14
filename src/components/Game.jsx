@@ -27,6 +27,7 @@ function Game() {
                 setTurns(turns + 1);
                 markers[id] = "X";
                 setMarkers;
+                
             } else {
                 console.log("player 2:");
                 setCurrentPlayer(true);
