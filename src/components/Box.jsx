@@ -1,10 +1,9 @@
 import "./Game.css";
+import { useState } from "react";
 
-function Box ({id}){
+function Box({ id, onClick }) {
 
-    return(
-        <div className="box">S</div>
-    )
+    return <div className="box" id={id} onClick={onClick}></div>;
 }
 
 export default Box;
